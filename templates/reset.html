@@ -1,0 +1,232 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Color Switcher Mockup -->
+    <link href="{% static 'css/color-switcher-design.css' %}" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    
+  </head>
+<body class="hidden-bar-wrapper dark-body">
+<!-- Page Title Section -->
+<section class="page-title" style="background-image: url('/static/images/background/pattern-16.png')">
+  <div class="pattern-layer-one" style="background-image: url( 'static/images/main-slider/pattern-1.png' )"></div>
+  <div class="pattern-layer-two" style="background-image: url( 'static/images/background/pattern-17.png' )"></div>
+  <div class="pattern-layer-three" style="background-image: url( 'static/images/background/pattern-18.png' )"></div>
+  <div class="pattern-layer-four" style="background-image: url( 'static/images/icons/cross-icon.png' )"></div>
+  <div class="auto-container">
+          <h2>Reset Password</h2>
+    <!-- <ul class="page-breadcrumb">
+      <li><a href="{% url 'index' %}">home</a></li>
+      <li>Login / Register</li>
+    </ul> -->
+  </div>
+</section>
+<!-- End Page Title Section -->
+<!--Register Section-->
+<section class="register-section">
+  <div class="auto-container">
+      <div class="row clearfix">
+          
+          <!--Form Column-->
+          <div class="form-column column col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          
+              <div class="form-title">
+                  <h2>Reset Password</h2>
+              </div>
+              
+              <!--Login Form-->
+              <div class="styled-form login-form">
+                  <form method="post" name="login_form" id="login_form" >
+                    {% csrf_token %}
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="column col-md-4 col-sm-12 col-xs-12">
+                            <input type="radio" name="user_type" id="user_type_1" checked value="1">
+                            <label for="payment-1"><strong>หน่วยงานภายนอก</strong></label>
+                          </div>
+                          <div class="column col-md-4 col-sm-12 col-xs-12">
+                            <input type="radio" name="user_type" id="user_type_2" value="2">
+                            <label for="payment-3"><strong>หน่วยงานภายใน PEA </strong></label>
+                          </div>
+                          <div class="column col-md-4 col-sm-12 col-xs-12">
+                            <input type="radio" name="user_type" id="user_type_3" value="3">
+                            <label for="payment-3"><strong>ผู้นำเสนอบทความ </strong></label>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                          <span class="adon-icon"><span class="fa fa-user"></span></span>
+                          <input type="text" name="username" value="" placeholder="เบอร์โทรศัพท์ หรือ รหัสพนักงานสำหรับพนักงานPEA *">
+                      </div>
+                      <div class="form-group">
+                          <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span>
+                          <input type="text" autocomplete="off" name="userEmail" value="" placeholder="ใส่ E-mail ที่ลงทะเบียนในเว็บไซค์">
+                      </div>
+                      <div class="form-group">
+                          <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span>
+                          <input type="password" autocomplete="off" name="userpassword" value="" placeholder="ใส่ password ใหม่">
+                      </div>
+                      <div class="clearfix">
+                          <div class="form-group pull-left">
+                              <button type="submit" class="theme-btn btn-style-two"><span class="txt">ยืนยัน</span></button>
+                              <br><br><p>ผู้บริหารและพนักงาน PEA สามารถเข้าระบบ <br>ด้วยรหัสพนักงานและ Password เข้าเครื่องคอมพิวเตอร์</p>
+                          </div>
+                          
+                      </div> 
+                  </form>
+              </div>
+              
+          </div>
+          
+          <!--Form Column-->
+          <div class="form-column column col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          
+              <div class="form-title">
+                  <h2>สมัครเข้าร่วมงาน PEAConference and Innovation 2021</h2>
+              </div>
+              
+              <!--Login Form-->
+              <div class="styled-form register-form">
+                <div class="form-group">
+                  <a href="{% url 'register' 1 %}" class="col-md-6 theme-btn btn-style-two"><span class="txt">สำหรับหน่วยงานภายนอก</span></a>
+                </div>
+                <div class="form-group">
+                  <a href="{% url 'register' 2 %}" class="col-md-6 theme-btn btn-style-two"><span class="txt">สำหรับหน่วยงานภายใน PEA</span></a>
+                </div>
+              </div>
+              <div class="form-group">
+                <a href="{% url 'register' 3 %}" class="col-md-6 theme-btn btn-style-two"><span class="txt">สำหรับผู้นำเสนอบทความ</span></a>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+  </div>
+</section>
+<!--End Register Section-->
+<!-- Main Footer -->
+<footer class="main-footer style-three">
+  <div class="pattern-layer" style="background-image: url( 'static/images/background/pattern-3.png' )"></div>
+  <div class="pattern-layer-two" style="background-image: url( 'static/images/background/pattern-4.png' )"></div>
+  <div class="pattern-layer-three" style="background-image: url( 'static/images/background/pattern-5.png' )"></div>
+    <div class="auto-container">
+        <!--Widgets Section-->
+          <div class="widgets-section">
+            <div class="row clearfix">
+                
+                  <!-- Column -->
+                  <div class="big-column col-lg-5 col-md-12 col-sm-12">
+          <div class="row clearfix">
+          
+                        <!-- Footer Column -->
+                          <div class="footer-column col-lg-5 col-md-6 col-sm-12">
+                              <div class="footer-widget logo-widget">
+                <div class="logo">
+                  <a href="index.html"><img src="{% static 'images/logo peacon-170_80.png' %}" alt="" /></a>
+                </div>
+                <div class="text">ติดต่อสอบถามฝ่ายที่เกี่ยวข้อง <br>PEAConference and Innovation 2021</div>
+                <!-- Social Box -->
+                <!-- <ul class="social-box">
+                  <li><a href="#" class="fa fa-facebook-f"></a></li>
+                  <li><a href="#" class="fa fa-linkedin"></a></li>
+                  <li><a href="#" class="fa fa-twitter"></a></li>
+                  <li><a href="#" class="fa fa-google"></a></li>
+                </ul> -->
+              </div>
+            </div>
+            
+            <!-- Footer Column -->
+                          <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                              <div class="footer-widget links-widget">
+                <h4>ฝ่ายเลขานุการ</h4>
+                <ul class="list-style-two">
+                  <!-- <li><span class="icon flaticon-wall-clock"></span>Mon – Sat 10:00pm - 8:00pm</li> -->
+                  <li><span class="icon flaticon-phone-call"></span><a href="#">02-590-5842</a> </li>
+                  <li><span class="icon flaticon-email"></span><a href="#">ladda.lao@pea.co.th</a></li>
+                  <!-- <li><span class="icon flaticon-maps-and-flags"></span>16122 Collins Street West, Melbourne, VIC Srsars</li> -->
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <!-- Column -->
+                  <div class="big-column col-lg-6 col-md-12 col-sm-12">
+          <div class="row clearfix">
+            
+            <!--Footer Column-->
+                          <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                              <div class="footer-widget gallery-widget">
+                <h4>ฝ่ายพิจารณาบทความ</h4>
+                <ul class="list-style-two">
+                  
+                  <li><span class="icon flaticon-phone-call"></span><a href="#">02-009-6059</a> </li>
+                  <li><span class="icon flaticon-email"></span><a href="mailto:peacon2021@pea.co.th">peacon2021@pea.co.th</a></li>
+                  <!-- <li><span class="icon flaticon-maps-and-flags"></span>16122 Collins Street West, Melbourne, VIC Srsars</li> -->
+                </ul>
+              </div>
+            </div>
+            
+            <!-- Footer Column -->
+                          <div class="footer-column col-lg-5 col-md-6 col-sm-12">
+                              <div class="footer-widget links-widget">
+                <h4>ฝ่ายสารสนเทศ</h4>
+                <ul class="list-style-two">
+                  <li><span class="icon flaticon-pin"></span>ระบบ Webex</li>
+                  <li><span class="icon flaticon-phone-call"></span><a href="#">02-590-9031</a><br> <a href="#">02-590-9035</a></li>
+                  <li><span class="icon flaticon-email"></span><a href="#">peacon2021@pea.co.th</a></li>
+                  <!-- <li><span class="icon flaticon-maps-and-flags"></span>16122 Collins Street West, Melbourne, VIC Srsars</li> -->
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="copyright">Copyright © 2021 Merix by <a href="https://themeforest.net/user/themerange">ThemeRange</a>. All Rights Reserved. All Rights Reserved.</div>
+    </div>
+    
+  </div>
+</footer>
+<!-- End Main Footer -->
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox.js' %}"></script>
+<script src="{% static 'js/appear.js' %}"></script>
+<script src="{% static 'js/parallax.min.js' %}"></script>
+<script src="{% static 'js/tilt.jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery.paroller.min.js' %}"></script>
+<script src="{% static 'js/owl.js' %}"></script>
+<script src="{% static 'js/wow.js' %}"></script>
+<script src="{% static 'js/nav-tool.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/color-settings.js' %}"></script>
+<!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+
+</body>
+</html>

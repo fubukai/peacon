@@ -1,0 +1,770 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Color Switcher Mockup -->
+    <link href="{% static 'css/color-switcher-design.css' %}" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    
+  </head>
+<body class="hidden-bar-wrapper dark-body">
+<!-- Page Title Section -->
+<section class="page-title" style="background-image: url( '../static/images/background/pattern-16.png' )">
+  <div class="pattern-layer-one" style="background-image: url( '../static/images/main-slider/pattern-1.png' )"></div>
+  <div class="pattern-layer-two" style="background-image: url( '../static/images/background/pattern-17.png' )"></div>
+  <div class="pattern-layer-three" style="background-image: url( '../static/images/background/pattern-18.png' )"></div>
+  <div class="pattern-layer-four" style="background-image: url( '../static/images/icons/cross-icon.png' )"></div>
+  <div class="auto-container">
+          <h2>Register</h2>
+    <ul class="page-breadcrumb">
+      <li><a href="{% url 'index' %}">home</a></li>
+      <li>Register</li>
+    </ul>
+  </div>
+</section>
+<!-- End Page Title Section -->
+
+<!--CheckOut Page-->
+<div class="checkout-page">
+  <div class="auto-container">
+      <!--Default Links-->
+        <!-- <ul class="default-links">
+            <li>Exisitng Customer? <a href="#">Click here to login</a></li>
+            <li>Have a coupon? <a href="#">Click here to enter your code</a></li>
+        </ul> -->
+      <!--Checkout Details-->
+       
+          {% if context.TypeRegist == 1 %}
+          <div class="checkout-form">
+            <form method="POST" id="form_1" name="form_1" autocomplete="off" >
+              {% csrf_token %}  
+              <div class="row clearfix">
+                  <!--Column-->
+                  <input type="hidden" value="{{ context.TypeRegist }}">
+                    <div class="column col-md-6 col-sm-12 col-xs-12">
+                        <div class="checkout-title">
+                          <h2>สำหรับหน่วยงานภายนอก</h2>
+                        </div>
+                        <div class="row clearfix">
+                        
+                            <!-- Form Group-->
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="field-label">ประเภทหน่วยงาน <sup>*</sup></div>
+                                <select required id="Exuser_type" name="Exuser_type">
+                                  <option selected value="0">โปรดเลือกประเภทหน่วยงาน</option>
+                                  <option value="หน่วยงานภาครัฐ">หน่วยงานภาครัฐ</option>
+                                  <option value="สถาบันการศึกษา">สถาบันการศึกษา</option>
+                                  <option value="บริษัทเอกชน">บริษัทเอกชน</option>
+                                  <option value="ผู้สนใจทั่วไป">ผู้สนใจทั่วไป</option>
+                                </select>
+                                <!-- <input type="text" name="field-name" value="" placeholder=""> -->
+                            </div>
+                            
+                            <!--Form Group-->
+                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                <div class="field-label">ชื่อ <sup>*</sup></div>
+                                <input type="text" name="Exuser_name" id ="Exuser_name" value="" placeholder="" required>
+                            </div>
+                            
+                            <!--Form Group-->
+                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                <div class="field-label">นามสกุล <sup>*</sup></div>
+                                <input type="text" name="Exuser_lastname" id="Exuser_lastname" value="" placeholder="" required>
+                            </div>
+                            
+                            <!--Form Group-->
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="field-label">ตำแหน่ง <sup>*</sup></div>
+                                <input type="text" name="Exuser_position" id="Exuser_position" value="" placeholder="" required>
+                            </div>
+                            
+                            <!--Form Group-->
+                            <!-- <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" name="field-name" value="" placeholder="">
+                            </div> -->
+                            
+                            <!--Form Group-->
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="field-label">ชื่อหน่วยงาน/สถาบันการศึกษา<sup>*</sup></div>
+                                <input type="text" name="Exuser_Ageny" id="Exuser_Ageny" value="" placeholder="" required>
+                            </div>
+                            
+                            <!--Form Group-->
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="field-label">e-mail <sup>*</sup></div>
+                                <input type="text" name="Exuser_email" id="Exuser_email" value="" placeholder="Email Address" required>
+                            </div>
+                            
+                            <!--Form Group-->
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                              <div class="field-label">เบอร์โทรศัพท์มือถือ <sup>*</sup></div>
+                                <input type="text" name="Exuser_tel" id="Exuser_tel" value="" placeholder="Phone Number" required>
+                            </div>
+
+                            <!--Form Group-->
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                              <div class="field-label">ที่อยู่ (กรณีได้รับของรางวัล)<sup>*</sup></div>
+                                <textarea name="Exuser_address" id="Exuser_address" value="" placeholder="" required></textarea>
+                                <!-- <input type="text" name="field-name" value="" placeholder=""> -->
+                            </div>
+
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                              <span class="adon-icon">Password <span class="fa fa-unlock-alt"></span></span>
+                              <input type="password" name="Exuser_password" id="Exuser_password" value="" placeholder="Enter Password" autocomplete="off" required>
+                            </div>
+                            
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <button type="button" class="theme-btn btn-style-two" id="myBtn" onclick="myFunction()"><span class="txt">ลงทะเบียนเข้าร่วมงาน</span></button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--Column-->
+                    <div class="column col-md-6 col-sm-12 col-xs-12"> 
+                      <div class="inner-column">
+                        <div class="image titlt text-center" data-tilt data-tilt-max="1">
+                          <img src="http://themerange.net/html/merix/merix-dark/images/resource/about-1.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+
+          {% elif context.TypeRegist == 2 %}
+            <div class="checkout-form">
+              <form method="POST" id="form_2" name="form_2">
+                {% csrf_token %}
+                <div class="row clearfix">
+                  <!--Column-->
+                  <input type="hidden" value="{{ context.TypeRegist }}">
+                    <div class="column col-md-6 col-sm-12 col-xs-12">
+                        <div class="checkout-title">
+                          <h2>สำหรับหน่วยงานภายใน</h2>
+                        </div>
+                        <div class="row clearfix">
+                        
+                            <!-- Form Group-->
+                            <div class="form-group col-md-8 col-sm-8 col-xs-8">
+                                <div class="field-label">รหัสพนักงาน <sup>*</sup></div>
+                                <input type="text" name="Inuser_id" id ="Inuser_id" required value="{{ send_data.Inuser_id }}" placeholder="{{ send_data.Inuser_id }}">
+                            </div>
+                            <div class="form-group col-md-4 col-sm-4 col-xs-4">
+                              <div class="field-label">ค้นหาข้อมูลพนักงาน</div>
+                              <button type='button' onclick="check()" name ='action' value="check" class="search-box-btn search-box-outer"><span class="icon fa fa-search"></span> ค้นหา</button>
+                            </div>
+                            
+                            <!--Form Group-->
+                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                <div class="field-label">ชื่อ </div>
+                                <input type="text" name="Inuser_name" id ="Inuser_name" value="{{ send_data.Inuser_name }}" placeholder="{{ send_data.Inuser_name }}" readonly>
+                            </div>
+                            
+                            <!--Form Group-->
+                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                <div class="field-label">นามสกุล </div>
+                                <input type="text" name="Inuser_lastname" id="Inuser_lastname" value="{{ send_data.Inuser_lastname }}" placeholder="{{ send_data.Inuser_lastname }}" readonly>
+                            </div>
+                            
+                            <!--Form Group-->
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="field-label">ตำแหน่ง </div>
+                                <input type="text" name="Inuser_position" id="Inuser_position" value="{{ send_data.Inuser_position }}" placeholder="{{ send_data.Inuser_position }}" readonly>
+                            </div>
+                            
+                            <!--Form Group-->
+                            <!-- <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" name="field-name" value="" placeholder="">
+                            </div> -->
+                            
+                            <!--Form Group-->
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="field-label">ชื่อหน่วยงาน</div>
+                                <input type="text" name="Inuser_Ageny" id="Inuser_Ageny" value="{{ send_data.Inuser_Ageny }}" placeholder="{{ send_data.Inuser_Ageny }}" readonly>
+                            </div>
+                            
+                            <!--Form Group-->
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="field-label">e-mail <sup>*</sup></div>
+                                <input type="text" id="Inuser_email" name="Inuser_email" value="" placeholder="Email Address" required>
+                            </div>
+                            
+                            <!--Form Group-->
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                              <div class="field-label">เบอร์โทรศัพท์มือถือ <sup>*</sup></div>
+                                <input type="text" id="Inuser_tel" name="Inuser_tel" value="" placeholder="Phone Number" required>
+                            </div>
+
+                            <!--Form Group-->
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                              <div class="field-label">ที่อยู่ (กรณีได้รับของรางวัล)<sup>*</sup></div>
+                                <textarea id="Inuser_address" name="Inuser_address" value="" placeholder="" required></textarea>
+                                <!-- <input type="text" name="field-name" value="" placeholder=""> -->
+                            </div>
+
+                            
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <button type="button" class="theme-btn btn-style-two" id="action" onclick="myFunction2()" name ='action' value="save"><span class="txt">ลงทะเบียนเข้าร่วมงาน</span></button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--Column-->
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                      <div class="inner-column">
+                        <div class="image titlt" data-tilt data-tilt-max="1">
+                          <img src="http://themerange.net/html/merix/merix-dark/images/resource/about-1.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </form>
+            </div>
+          {% elif context.TypeRegist == 3 %}
+          <div class="checkout-form">
+            <form method="POST" id="form_3" name="form_3" autocomplete="off" >
+              {% csrf_token %}  
+              <div class="row clearfix">
+                  <!--Column-->
+                  <input type="hidden" value="{{ context.TypeRegist }}">
+                    <div class="column col-md-6 col-sm-12 col-xs-12">
+                        <div class="checkout-title">
+                          <h2>สำหรับผู้นำเสนอบทความ</h2>
+                        </div>
+                        <div class="row clearfix">
+                        
+                            <!-- Form Group-->
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="field-label">ประเภทหน่วยงาน <sup>*</sup></div>
+                                <select required id="Speaker_type" name="Speaker_type">
+                                  <option selected value="0">โปรดเลือกประเภทหน่วยงาน</option>
+                                  <option value="หน่วยงานภาครัฐ">หน่วยงานภายใน</option>
+                                  <option value="สถาบันการศึกษา">หน่วยงานภายนอก</option>
+                                </select>
+                                <!-- <input type="text" name="field-name" value="" placeholder=""> -->
+                            </div>
+                            
+                            <!--Form Group-->
+                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                <div class="field-label">ชื่อ <sup>*</sup></div>
+                                <input type="text" name="Speaker_name" id ="Speaker_name" value="" placeholder="" required>
+                            </div>
+                            
+                            <!--Form Group-->
+                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                <div class="field-label">นามสกุล <sup>*</sup></div>
+                                <input type="text" name="Speaker_lastname" id="Speaker_lastname" value="" placeholder="" required>
+                            </div>
+                            
+                            <!--Form Group-->
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="field-label">ชื่อบทความ<sup>*</sup></div>
+                                <input type="text" name="Speaker_position" id="Speaker_position" value="" placeholder="" required>
+                            </div>
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                              <div class="field-label">ประเภทบทความ<sup>*</sup></div>
+                              <select required id="Speaker_Status" name="Speaker_Status">
+                                <option selected value="0">ประเภทบทความ</option>
+                                <option value=".development">Power and Energy</option>
+                                <option value=".marketing">Innovation and Technology</option>
+                                <option value=".media">New Business and Marketing</option>
+                                <option value=".optimization">HR / Financial / Accounting / Strategy</option>
+                                <option value=".share">Share idea</option>
+                              </select>
+                            </div>
+                            <!--Form Group-->
+                            <!-- <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" name="field-name" value="" placeholder="">
+                            </div> -->
+                            
+                            <!--Form Group-->
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="field-label">ชื่อหน่วยงาน/สถาบันการศึกษา(กองหรือฝ่ายสำหรับบทความภายใน)<sup>*</sup></div>
+                                <input type="text" name="Speaker_Ageny" id="Speaker_Ageny" value="" placeholder="" required>
+                            </div>
+                            
+                            <!--Form Group-->
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                              <div class="field-label"><h4>ข้อมูลติดต่อ</h4></div>
+                          </div>
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="field-label">E-mail <sup>*</sup></div>
+                                <input type="text" name="Speaker_email" id="Speaker_email" value="" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                              <div class="field-label">Line <sup>*</sup></div>
+                              <input type="text" name="Speaker_line" id="Speaker_line" value="" placeholder="Email Address" required>
+                          </div>
+                            <!--Form Group-->
+                          <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                              <div class="field-label">เบอร์โทรศัพท์มือถือ <sup>*</sup></div>
+                                <input type="text" name="Speaker_tel" id="Speaker_tel" value="" placeholder="Phone Number" required>
+                          </div>
+
+                            <!--Form Group-->
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                              <div class="field-label">ที่อยู่ (กรณีได้รับของรางวัล)<sup>*</sup></div>
+                                <textarea name="Speaker_address" id="Speaker_address" value="" placeholder="" required></textarea>
+                                <!-- <input type="text" name="field-name" value="" placeholder=""> -->
+                            </div>
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                              <span class="adon-icon">Username <span class="fa fa-unlock-alt"></span></span>
+                              <input type="text" name="Speaker_Username" id="Speaker_Username" value="" placeholder="Enter Username" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                              <span class="adon-icon">Password <span class="fa fa-unlock-alt"></span></span>
+                              <input type="password" name="Speaker_password" id="Speaker_password" value="" placeholder="Enter Password" autocomplete="off" required>
+                            </div>
+                            
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <button type="button" class="theme-btn btn-style-two" id="myBtn" onclick="myFunction3()"><span class="txt">ลงทะเบียนเข้าร่วมงาน</span></button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--Column-->
+                    <div class="column col-md-6 col-sm-12 col-xs-12"> 
+                      <div class="inner-column">
+                        <div class="image titlt text-center" data-tilt data-tilt-max="1">
+                          <img src="http://themerange.net/html/merix/merix-dark/images/resource/about-1.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+            {% endif %}
+
+        
+        <!--End Checkout Details-->
+        
+        
+        
+   </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close_model">&times;</span>
+          <h4>ยืนยันการลงทะเบียนเข้าร่วมงาน PEAConference and Innovation 2021 </h4>
+          <p> คุณ <label id="model-firstname" ></label> <br>ลงทะเบียนด้วย e-mail : <label id="model-email"></label></p>
+          
+          {% if context.TypeRegist == '1' or context.TypeRegist == 1 %}
+          <p>ท่านสามารถใช้ e-mail ที่ใช้ในการสมัคร เป็น username ในการเข้าระบบครั้งต่อไป</p>
+          <div class="row">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <button type="button" class="theme-btn btn-style-two" onclick="submit_model()"><span class="txt">ยืนยันการลงทะเบียน</span></button>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <!-- <button type="button" class="theme-btn btn-style-two text-center"><span class="txt">ยืนยันการลงทะเบียน</span></button> -->
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <button type="button" class="theme-btn btn-style-eight" onclick="closefn()"><span class="txt">ยกเลิก</span></button>
+            </div>
+          </div>
+          {% elif context.TypeRegist == '2' or context.TypeRegist == 2 %}
+          <p>ท่านสามารถใช้ รหัสพนักงาน และ password ในการเข้าระบบครั้งต่อไปได้เลย</p>
+          <div class="row">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <button type="button" class="theme-btn btn-style-two" onclick="submit_model2()"><span class="txt">ยืนยันการลงทะเบียน</span></button>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <!-- <button type="button" class="theme-btn btn-style-two text-center"><span class="txt">ยืนยันการลงทะเบียน</span></button> -->
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <button type="button" class="theme-btn btn-style-eight" onclick="closefn()"><span class="txt">ยกเลิก</span></button>
+            </div>
+          </div>
+          {% elif context.TypeRegist == '3' or context.TypeRegist == 3 %}
+          <p>ท่านสามารถใช้ username และ password ในการเข้าระบบครั้งต่อไปได้เลย</p>
+          <div class="row">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <button type="button" class="theme-btn btn-style-two" onclick="submit_model3()"><span class="txt">ยืนยันการลงทะเบียน</span></button>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <!-- <button type="button" class="theme-btn btn-style-two text-center"><span class="txt">ยืนยันการลงทะเบียน</span></button> -->
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <button type="button" class="theme-btn btn-style-eight" onclick="closefn()"><span class="txt">ยกเลิก</span></button>
+            </div>
+          </div>
+          {% endif %}
+          
+        </div>
+  
+    </div>
+
+</div>
+<!--End CheckOut Page-->
+
+<!-- Main Footer -->
+<footer class="main-footer style-three">
+  <div class="pattern-layer" style="background-image: url( '../static/images/background/pattern-3.png' )"></div>
+  <div class="pattern-layer-two" style="background-image: url( '../static/images/background/pattern-4.png' )"></div>
+  <div class="pattern-layer-three" style="background-image: url( '../static/images/background/pattern-5.png' )"></div>
+    <div class="auto-container">
+        <!--Widgets Section-->
+          <div class="widgets-section">
+            <div class="row clearfix">
+                
+                  <!-- Column -->
+                  <div class="big-column col-lg-5 col-md-12 col-sm-12">
+          <div class="row clearfix">
+          
+                        <!-- Footer Column -->
+                          <div class="footer-column col-lg-5 col-md-6 col-sm-12">
+                              <div class="footer-widget logo-widget">
+                <div class="logo">
+                  <a href="index.html"><img src="{% static 'images/logo peacon-170_80.png' %}" alt="" /></a>
+                </div>
+                <div class="text">ติดต่อสอบถามฝ่ายที่เกี่ยวข้อง <br>PEAConference and Innovation 2021</div>
+                <!-- Social Box -->
+                <!-- <ul class="social-box">
+                  <li><a href="#" class="fa fa-facebook-f"></a></li>
+                  <li><a href="#" class="fa fa-linkedin"></a></li>
+                  <li><a href="#" class="fa fa-twitter"></a></li>
+                  <li><a href="#" class="fa fa-google"></a></li>
+                </ul> -->
+              </div>
+            </div>
+            
+            <!-- Footer Column -->
+                          <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                              <div class="footer-widget links-widget">
+                <h4>ฝ่ายเลขานุการ</h4>
+                <ul class="list-style-two">
+                  <!-- <li><span class="icon flaticon-wall-clock"></span>Mon – Sat 10:00pm - 8:00pm</li> -->
+                  <li><span class="icon flaticon-phone-call"></span><a href="#">02-590-5842</a> </li>
+                  <li><span class="icon flaticon-email"></span><a href="#">ladda.lao@pea.co.th</a></li>
+                  <!-- <li><span class="icon flaticon-maps-and-flags"></span>16122 Collins Street West, Melbourne, VIC Srsars</li> -->
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <!-- Column -->
+                  <div class="big-column col-lg-6 col-md-12 col-sm-12">
+          <div class="row clearfix">
+            
+            <!--Footer Column-->
+                          <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                              <div class="footer-widget gallery-widget">
+                <h4>ฝ่ายพิจารณาบทความ</h4>
+                <ul class="list-style-two">
+                  
+                  <li><span class="icon flaticon-phone-call"></span><a href="#">02-009-6059</a> </li>
+                  <li><span class="icon flaticon-email"></span><a href="mailto:peacon2021@pea.co.th">peacon2021@pea.co.th</a></li>
+                  <!-- <li><span class="icon flaticon-maps-and-flags"></span>16122 Collins Street West, Melbourne, VIC Srsars</li> -->
+                </ul>
+              </div>
+            </div>
+            
+            <!-- Footer Column -->
+                          <div class="footer-column col-lg-5 col-md-6 col-sm-12">
+                              <div class="footer-widget links-widget">
+                <h4>ฝ่ายสารสนเทศ</h4>
+                <ul class="list-style-two">
+                  <li><span class="icon flaticon-pin"></span>ระบบ Webex</li>
+                  <li><span class="icon flaticon-phone-call"></span><a href="#">02-590-9031</a><br> <a href="#">02-590-9035</a></li>
+                  <li><span class="icon flaticon-email"></span><a href="#">peacon2021@pea.co.th</a></li>
+                  <!-- <li><span class="icon flaticon-maps-and-flags"></span>16122 Collins Street West, Melbourne, VIC Srsars</li> -->
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="copyright">Copyright © 2021 Merix by <a href="https://themeforest.net/user/themerange">ThemeRange</a>. All Rights Reserved. All Rights Reserved.</div>
+    </div>
+    
+  </div>
+</footer>
+<!-- End Main Footer -->
+
+<script>
+  // Get the modal
+  function myFunction(){
+      var modal = document.getElementById("myModal");
+      var typeorg = document.getElementById("Exuser_type").value;
+      var firstname = document.getElementById("Exuser_name").value;
+      var surname = document.getElementById("Exuser_lastname").value;
+      var email = document.getElementById("Exuser_email").value;
+      var position = document.getElementById("Exuser_position").value;
+      var orgname = document.getElementById("Exuser_Ageny").value;
+      var tel = document.getElementById("Exuser_tel").value;
+      var address = document.getElementById("Exuser_address").value;
+      var password = document.getElementById("Exuser_password").value;
+
+      console.log(firstname);
+      document.getElementById("Exuser_name").innerHTML = firstname;
+      if(typeorg == "0"){
+        document.getElementById("Exuser_type").focus();
+      }else if(firstname == ""){
+        document.getElementById("Exuser_name").focus();
+      }else if(surname == ""){
+        document.getElementById("Exuser_lastname").focus();
+      }else if(position == ""){
+        document.getElementById("Exuser_position").focus();
+      }else if(orgname == ""){
+        document.getElementById("Exuser_Ageny").focus();
+      }else if(email == ""){
+        document.getElementById("Exuser_email").focus();
+      }else if(tel == ""){
+        document.getElementById("Exuser_tel").focus();
+      }else if(address == ""){
+        document.getElementById("Exuser_address").focus();
+      }else if(password == ""){
+        document.getElementById("Exuser_password").focus();
+      }else{
+        modal.style.display = "block";
+        document.getElementById("model-firstname").textContent = firstname + ' ' + surname;
+        document.getElementById("model-email").textContent = email;
+      }
+      // document.getElementById("model-firstname").textContent = firstname;
+      
+      
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+      
+      // Get the <span> element that closes the modal
+     
+      
+      // When the user clicks the button, open the modal 
+      
+      
+      
+      
+     
+    } // When the user clicks on <span> (x), close the modal
+    var span = document.getElementsByClassName("close_model")[0];
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    var modal = document.getElementById("myModal");
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    
+    function closefn(){
+      var modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+    function submit_model(){
+      document.getElementById("form_1").submit();
+    }
+
+    
+  </script>
+
+  <script>
+  function myFunction2(){
+    var modal = document.getElementById("myModal");
+    var staffid = document.getElementById("Inuser_id").value;
+    var firstname = document.getElementById("Inuser_name").value;
+    var surname = document.getElementById("Inuser_lastname").value;
+    var email = document.getElementById("Inuser_email").value;
+    var position = document.getElementById("Inuser_position").value;
+    var orgname = document.getElementById("Inuser_Ageny").value;
+    var tel = document.getElementById("Inuser_tel").value;
+    var address = document.getElementById("Inuser_address").value;
+    
+
+    console.log(firstname);
+    document.getElementById("Inuser_name").innerHTML = firstname;
+    if(staffid == ""){
+      document.getElementById("Inuser_id").focus();
+    }else if(firstname == ""){
+      document.getElementById("Inuser_name").focus();
+    }else if(surname == ""){
+      document.getElementById("Inuser_lastname").focus();
+    }else if(position == ""){
+      document.getElementById("Inuser_position").focus();
+    }else if(orgname == ""){
+      document.getElementById("Inuser_Ageny").focus();
+    }else if(email == ""){
+      document.getElementById("Inuser_email").focus();
+    }else if(tel == ""){
+      document.getElementById("Inuser_tel").focus();
+    }else if(address == ""){
+      document.getElementById("Inuser_address").focus();
+    }else{
+      modal.style.display = "block";
+      document.getElementById("model-firstname").textContent = firstname + ' ' + surname;
+      document.getElementById("model-email").textContent = email;
+    }
+    // document.getElementById("model-firstname").textContent = firstname;
+    
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+   
+    
+    // When the user clicks the button, open the modal 
+    
+   
+  } // When the user clicks on <span> (x), close the modal
+  var span = document.getElementsByClassName("close_model")[0];
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  var modal = document.getElementById("myModal");
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  
+  function closefn(){
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+  }
+  function submit_model2(){  
+    document.getElementById("form_2").submit();
+  }
+
+  
+</script>
+<script>
+  function myFunction3(){
+    var modal = document.getElementById("myModal");
+    var staffid = document.getElementById("Speaker_type").value;
+    var firstname = document.getElementById("Speaker_name").value;
+    var surname = document.getElementById("Speaker_lastname").value;
+    var email = document.getElementById("Speaker_email").value;
+    var position = document.getElementById("Speaker_position").value;
+    var orgname = document.getElementById("Speaker_Ageny").value;
+    var tel = document.getElementById("Speaker_tel").value;
+    var address = document.getElementById("Speaker_address").value;
+    
+
+    console.log(firstname);
+    document.getElementById("Speaker_name").innerHTML = firstname;
+    if(staffid == ""){
+      document.getElementById("Speaker_type").focus();
+    }else if(firstname == ""){
+      document.getElementById("Speaker_name").focus();
+    }else if(surname == ""){
+      document.getElementById("Speaker_lastname").focus();
+    }else if(position == ""){
+      document.getElementById("Speaker_position").focus();
+    }else if(orgname == ""){
+      document.getElementById("Speaker_Ageny").focus();
+    }else if(email == ""){
+      document.getElementById("Speaker_email").focus();
+    }else if(tel == ""){
+      document.getElementById("Speaker_tel").focus();
+    }else if(address == ""){
+      document.getElementById("Speaker_address").focus();
+    }else{
+      modal.style.display = "block";
+      document.getElementById("model-firstname").textContent = firstname + ' ' + surname;
+      document.getElementById("model-email").textContent = email;
+    }
+    // document.getElementById("model-firstname").textContent = firstname;
+    
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+   
+    
+    // When the user clicks the button, open the modal 
+    
+   
+  } // When the user clicks on <span> (x), close the modal
+  var span = document.getElementsByClassName("close_model")[0];
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  var modal = document.getElementById("myModal");
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  
+  function closefn(){
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+  }
+  function submit_model3(){  
+    document.getElementById("form_3").submit();
+  }
+
+  
+</script>
+<script>
+  function check(){
+      var Inuser_id = document.getElementById("Inuser_id").value;
+      console.log(Inuser_id)
+      $.ajax({
+        url: '{% url "validate_username" %}',
+        data: {
+          'MngID': Inuser_id
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.is_taken) {
+            document.getElementById('Inuser_name').value = data['Fullname'];
+            document.getElementById('Inuser_lastname').value = data['Lastname'];
+            document.getElementById('Inuser_position').value = data['Position'];
+            document.getElementById('Inuser_Ageny').value = data['Ageny'];
+            console.log(data['Fullname'])
+          }
+        }
+      });
+}
+  </script>
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+  <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+  <script src="{% static 'js/appear.js' %}"></script>
+  <script src="{% static 'js/parallax.min.js' %}"></script>
+  <script src="{% static 'js/tilt.jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery.paroller.min.js' %}"></script>
+  <script src="{% static 'js/owl.js' %}"></script>
+  <script src="{% static 'js/wow.js' %}"></script>
+  <script src="{% static 'js/nav-tool.js' %}"></script>
+  <script src="{% static 'js/jquery-ui.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/color-settings.js' %}"></script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+  
+  </body>
+  </html>

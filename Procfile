@@ -1,0 +1,1 @@
+web: gunicorn peacon_Project.wsgi

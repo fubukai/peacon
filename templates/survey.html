@@ -1,0 +1,296 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- Page Title Section -->
+<section class="page-title" style="background-image: url('../static/images/background/pattern-16.png')">
+  <div class="pattern-layer-one" style="background-image: url('../static/images/main-slider/pattern-1.png' )"></div>
+  <div class="pattern-layer-two" style="background-image: url('../static/images/background/pattern-17.png' )"></div>
+  <div class="pattern-layer-three" style="background-image: url('../static/images/background/pattern-18.png' )"></div>
+  <div class="pattern-layer-four" style="background-image: url('../static/images/icons/cross-icon.png' )"></div>
+  <div class="auto-container">
+          <h2>Survey</h2>
+    <ul class="page-breadcrumb">
+      <li><a href="{% url 'index' %}">home</a></li>
+      <li>Survey</li>
+    </ul>
+  </div>
+</section>
+
+<div class="checkout-page">
+  <div class="auto-container">
+      <!--Default Links-->
+        <!-- <ul class="default-links">
+            <li>Exisitng Customer? <a href="#">Click here to login</a></li>
+            <li>Have a coupon? <a href="#">Click here to enter your code</a></li>
+        </ul> -->
+      <!--Checkout Details-->
+        <div class="checkout-form">
+            <!-- <form method="post" action="checkout.html"> -->
+            <form method="POST" id="" name="">
+              {% csrf_token %}
+                  <!--Column-->
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="checkout-title">
+                          <h2>แบบประเมินความพึงพอใจในงานประชุมวิชาการ กฟภ. ประจำปี 2564 (PEACON & Innovation 2021)</h2>
+                        </div>
+                    </div>
+                        <!--Payment Options-->
+                    <!-- <div class="payment-options">
+                      <ul>
+                          <li>
+                              <div class="radio-option">
+                                  <input type="radio" name="payment-group" id="payment-1" checked>
+                                  <label for="payment-1"><strong>ผู้บริหารและพนักงาน PEA</strong></label>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="radio-option">
+                                  <input type="radio" name="payment-group" id="payment-3">
+                                  <label for="payment-3"><strong>บุคคลภายนอก</strong></label>
+                              </div>
+                          </li>
+                      </ul>
+                    </div> -->
+                  
+                <!--End Place Order-->
+                        <!-- <div class="row clearfix"> -->
+                        
+                            <!--Form Group-->
+                            <!-- <div class="form-group2 col-md-12 col-sm-12 col-xs-12">
+                                <div class="field-label">ชื่อหน่วยงาน  <sup>*</sup></div>
+                                <p>ชื่อหน่วยงาน (สำหรับบุคคลภายนอก) / สายงาน (สำหรับพนักงาน PEA)</p>
+                                <input type="text" name="field-name" value="" placeholder="">
+                            </div>
+                        </div> -->
+            <!-- </form> -->
+        </div>
+        <!--End Checkout Details-->
+        
+        <!--Lower Content-->
+        <div class="lower-content">
+          <div class="row clearfix">
+              <!--Order Column-->
+              <div class="order-column column col-md-12 col-sm-12 col-xs-12">
+                  <!--Sec Title-->
+                    <div class="checkout-title">
+                      <h2>ความพึงพอใจในการประชุมวิชาการ</h2>
+                    </div>
+                    <div class="cart-outer">
+                        <table class="cart-table">
+                            <thead class="cart-header">
+                                <tr>
+                                    <th class="prod-column"></th>
+                                    <th>มากที่สุด</th>
+                                    <th>มาก</th>
+                                    <th>ปานกลาง</th>
+                                    <th>น้อย</th>
+                                    <th>น้อยที่สุด</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                            
+                                <tr>
+                                    <td class="prod-column">
+                                        <div class="column-box">
+                                            <h4 class="prod-title">การลงทะเบียนเข้าร่วมงานประชุม</h4>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                      <input type="radio" name="survey_score1" id="survey_score1" value="5" required>
+                                    </td>
+                                    <td class="">
+                                      <input type="radio" name="survey_score1" id="survey_score1" value="4">
+                                    </td>
+                                    <td class="">
+                                      <input type="radio" name="survey_score1" id="survey_score1" value="3">
+                                    </td>
+                                    <td class="">
+                                      <input type="radio" name="survey_score1" id="survey_score1" value="2">
+                                    </td>
+                                    <td class="">
+                                      <input type="radio" name="survey_score1" id="survey_score1" value="1">
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="prod-column">
+                                        <div class="column-box">
+                                            <h4 class="prod-title">ความชัดเจนของสัญญาณภาพและเสียง</h4>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                      <input type="radio" name="survey_score2" id="survey_score2" value="5" required>
+                                    </td>
+                                    <td class="">
+                                      <input type="radio" name="survey_score2" id="survey_score2" value="4">
+                                    </td>
+                                    <td class="">
+                                      <input type="radio" name="survey_score2" id="survey_score2" value="3">
+                                    </td>
+                                    <td class="">
+                                      <input type="radio" name="survey_score2" id="survey_score2" value="2">
+                                    </td>
+                                    <td class="">
+                                      <input type="radio" name="survey_score2" id="survey_score2" value="1">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="prod-column">
+                                      <div class="column-box">
+                                          <h4 class="prod-title">รูปแบบและเนื้อหาของเอกสารประกอบการประชุม (รูปแบบอิเล็กทรอนิกส์)</h4>
+                                      </div>
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score3" id="survey_score3" value="5" required>
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score3" id="survey_score3" value="4">
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score3" id="survey_score3" value="3">
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score3" id="survey_score3" value="2">
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score3" id="survey_score3" value="1">
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="prod-column">
+                                      <div class="column-box">
+                                          <h4 class="prod-title">การบรรยายพิเศษ</h4>
+                                      </div>
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score4" id="survey_score4" value="5" required>
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score4" id="survey_score4" value="4">
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score4" id="survey_score4" value="3">
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score4" id="survey_score4" value="2">
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score4" id="survey_score4" value="1">
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="prod-column">
+                                      <div class="column-box">
+                                          <h4 class="prod-title">การนำเสนอบทความ</h4>
+                                      </div>
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score5" id="survey_score5" value="5" required>
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score5" id="survey_score5" value="4">
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score5" id="survey_score5" value="3">
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score5" id="survey_score5" value="2">
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score5" id="survey_score5" value="1">
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="prod-column">
+                                      <div class="column-box">
+                                          <h4 class="prod-title">การนำเสนอแชร์ไอเดีย</h4>
+                                      </div>
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score6" id="survey_score6" value="5" required>
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score6" id="survey_score6" value="4">
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score6" id="survey_score6" value="3">
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score6" id="survey_score6" value="2">
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score6" id="survey_score6" value="1">
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="prod-column">
+                                      <div class="column-box">
+                                          <h4 class="prod-title">ภาพรวมในการจัดประชุมในครั้งนี้</h4>
+                                      </div>
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score7" id="survey_score7" value="5" required>
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score7" id="survey_score7" value="4">
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score7" id="survey_score7" value="3">
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score7" id="survey_score7" value="2">
+                                  </td>
+                                  <td class="">
+                                    <input type="radio" name="survey_score7" id="survey_score7" value="1">
+                                  </td>
+                               </tr>
+                                
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                    <div class="checkout-form">
+                      
+                      <!--Form Group-->
+                      <div>
+                        <div class="checkout-title">
+                          <h2>ข้อเสนอแนะ</h2>
+                        </div>
+                        <textarea class="" placeholder="โปรดระบุข้อเสนอแนะ" name="survey_comment" id="survey_comment"></textarea>
+                      </div>
+                    </div>
+                    <!-- end Form Group-->
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center form-group">
+                  <button class="theme-btn btn-style-three" type="submit" name="submit-form"><span class="txt">Submit</span></button>
+                </div>
+            </div>
+        </div>
+      </form>
+        <!--End Lower Content-->
+        
+   </div>
+</div>
+
+<!-- End Page Title Section -->
+
+  <!-- <div class="container">
+    <h1>ลงทะเบียนเข้างาน</h1>
+    <di class="row">
+      <div class="col-6 text-center">
+        <a class="btn btn-primary btn-lg" href="{% url 'register' 1 %}">สำหรับบุคคลทั่วไป / นิสิต / นักศึกษา </a>
+      </div>
+      <div class="col-6 text-center">
+        <a class="btn btn-info btn-lg" href="{% url 'register' 2 %}">สำหรับ พนักงาน PEA  </a>
+      </div>
+    </div>
+  </div>
+  <br> -->
+
+{% endblock %}

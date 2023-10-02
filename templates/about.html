@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- Page Title Section -->
+<section class="page-title" style="background-image: url({% static 'images/background/pattern-16.png' %})">
+  <div class="pattern-layer-one" style="background-image: url({% static 'images/main-slider/pattern-1.png' %})"></div>
+  <div class="pattern-layer-two" style="background-image: url({% static 'images/background/pattern-17.png' %})"></div>
+  <div class="pattern-layer-three" style="background-image: url({% static 'images/background/pattern-18.png' %})"></div>
+  <div class="pattern-layer-four" style="background-image: url({% static 'images/icons/cross-icon.png' %})"></div>
+  <div class="auto-container">
+          <h2>About us</h2>
+    <ul class="page-breadcrumb">
+      <li><a href="index.html">home</a></li>
+      <li>About PEACON & Innovation</li>
+    </ul>
+  </div>
+</section>
+<!-- End Page Title Section -->
+
+<!-- Services Section Three -->
+<section class="services-section-three style-two">
+  <div class="pattern-layer-one" style="background-image: url(images/icons/icon-8.png)"></div>
+  <div class="pattern-layer-two" style="background-image: url(images/icons/icon-9.png)"></div>
+  <div class="pattern-layer-three" style="background-image: url(images/icons/icon-10.png)"></div>
+  <div class="auto-container">
+    <div class="row clearfix">
+      
+      <!-- Blocks Column -->
+      <div class="blocks-column col-lg-6 col-md-12 col-sm-12">
+        <div class="inner-column">
+          <div class="row clearfix">
+            
+            <!-- Service Block Three -->
+            <div class="service-block-three col-lg-6 col-md-6 col-sm-12">
+              <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="icon-box">
+                  <span class="icon flaticon-badge"></span>
+                </div>
+                <h5><a href="{% url 'paper' 1 %}">Power & Energy</a></h5>
+                <div class="text">Energy as a Service , Smart grid , Power Systems and Automation etc.</div>
+              </div>
+            </div>
+            
+            <!-- Service Block Three -->
+            <div class="service-block-three col-lg-6 col-md-6 col-sm-12">
+              <div class="inner-box wow fadeInUp" data-wow-delay="150ms" data-wow-duration="1500ms">
+                <div class="icon-box">
+                  <span class="icon flaticon-management"></span>
+                </div>
+                <h5><a href="{% url 'paper' 2 %}">Innovation & Technology</a></h5>
+                <div class="text">Blockchain for energy , IOT ,Energy-Saving Technology etc.</div>
+              </div>
+            </div>
+            
+            <!-- Service Block Three -->
+            <div class="service-block-three col-lg-6 col-md-6 col-sm-12">
+              <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="icon-box">
+                  <span class="icon flaticon-growth"></span>
+                </div>
+                <h5><a href="{% url 'paper' 3 %}">New Business & Marketing</a></h5>
+                <div class="text">Powered Energy Trading , Vehicles-to-Grid (V2G) , Business Devel etc.</div>
+              </div>
+            </div>
+            
+            <!-- Service Block Three -->
+            <div class="service-block-three col-lg-6 col-md-6 col-sm-12">
+              <div class="inner-box wow fadeInUp" data-wow-delay="150ms" data-wow-duration="1500ms">
+                <div class="icon-box">
+                  <span class="icon flaticon-chat-3"></span>
+                </div>
+                <h5><a href="{% url 'paper' 4 %}">Hunam Resource / Financial / Accounting / Strategy</a></h5>
+                <div class="text">Enterprise Legal , Corporate Governance (CG) , Corporate Social Responsibility etc.</div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+      <!-- Content Column -->
+      <div class="content-column col-lg-6 col-md-12 col-sm-12">
+        <div class="inner-column">
+          <!-- Sec Title -->
+          <div class="sec-title">
+            <div class="title">PEACON & Innovation 2021</div>
+            <h2>งานประชุมวิชาการและนวัตกรรม <br>ของ กฟภ. ปี 2564 </h2>
+          </div>
+          <div class="bold-text">การจัดงาน PEACON & Innovation 2021 มีวัตถุประสงค์ในการจัดงานดังนี้</div>
+          <ul class="list-style-three">
+            <li>ส่งเสริมการศึกษา งานวิจัย การสร้างนวัตกรรม และพัฒนางานที่เกี่ยวข้องกับธุรกิจพลังงานไฟฟ้า เพื่อขับเคลื่อนองค์กรไปสู่ PEA Digital Utility</li>
+            <li>มุ่งสู่การเป็นองค์กรแห่งนวัตกรรม และส่งเสริมการจัดการความรู้อย่างต่อเนื่อง เน้นการสร้างและพัฒนาสู่การเป็น Digital Utility</li>
+            <li>เปิดโอกาสให้บุคลากร กฟภ. และ บุคคลภายนอก ได้พัฒนาความรู้ ความสามารถทางวิชาการ สนับสนุนในการพัฒนาระบบไฟฟ้า</li>
+            <li>เป็นเวทีในการแลกเปลี่ยนความรู้ระหว่างนักวิชาการ นักวิจัย และนักประดิษฐ์ ทั้งภายในและภายนอก กฟภ.</li>
+            <li>สร้างความร่วมมือกับสถาบันการศึกษา หน่วยงานภายนอกทั้งภาครัฐและเอกชน ในงานวิจัยและพัฒนา</li>
+          </ul>
+          <!-- <a href="contact.html" class="theme-btn btn-style-five"><span class="txt">Learn More</span></a> -->
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<!-- End Services Section Three -->
+
+{% endblock %}

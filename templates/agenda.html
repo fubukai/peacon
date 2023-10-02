@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- Page Title Section -->
+<section class="page-title" style="background-image: url(../static/images/background/pattern-16.png)">
+  <div class="pattern-layer-one" style="background-image: url(../static/images/main-slider/pattern-1.png)"></div>
+  <div class="pattern-layer-two" style="background-image: url(../static/images/background/pattern-17.png)"></div>
+  <div class="pattern-layer-three" style="background-image: url(../static/images/background/pattern-18.png)"></div>
+  <div class="pattern-layer-four" style="background-image: url(../static/images/icons/cross-icon.png)"></div>
+  <div class="auto-container">
+          <h2>Agenda</h2>
+    <ul class="page-breadcrumb">
+      <li><a href="{% url 'index' %}">home</a></li>
+      <li>Agenda</li>
+    </ul>
+  </div>
+</section>
+{% if context.date == '1' or context.date == 1 %}
+<section class="gallery-section">
+  <div>
+    <img src="../static/images/gallery/agenda.jpeg" style="width:80%; display: block; margin-left: auto; margin-right: auto; " ></img>
+  </div>
+</section>
+{% elif context.date == '2' or context.date == 2 %}
+<section class="gallery-section">
+  <div class="clearfix auto-container" style="margin-left: auto; margin-right: auto; ">
+    <div class="form-group pull-left">
+      <a href="https://pea.webex.com/pea/j.php?MTID=m8440b567c2f876fc8b21677bd3109c26"><button type="submit" class="theme-btn btn-style-two" style="margin: auto;  "><span class="txt">link Webex : ห้องนำเสนอบทความ ห้องที่ 1 วันที่ 30 พฤศจิกายน 2564</span></button></a>
+    </div>
+  </div>
+  <div class="auto-container">
+    <h4>บทความประเภท Full Paper ด้าน Power and Energy วันที่ 30 พฤศจิกายน 2564</h4>
+  </div>
+  <br>
+  <div>
+    <img src="../static/images/gallery/r1_30_1.jpg" style="width:60%; display: block; margin-left: auto; margin-right: auto; " ></img>
+  </div>
+  <br>
+  <div class="auto-container">
+    <h4>บทความประเภท Full Paper ด้าน Power and Energy วันที่ 1 ธันวาคม 2564</h4>
+  </div>
+  <br>
+  <div class="clearfix auto-container" style="margin-left: auto; margin-right: auto; ">
+    <div class="form-group pull-left">
+      <a href="https://pea.webex.com/pea/j.php?MTID=m8440b567c2f876fc8b21677bd3109c26"><button type="submit" class="theme-btn btn-style-two" style="margin: auto;  "><span class="txt">link Webex : ห้องนำเสนอบทความ ห้องที่ 1 วันที่ 1 ธันวาคม 2564</span></button></a>
+    </div>
+  </div>
+  <br>
+  <div>
+    <img src="../static/images/gallery/r1_1_1.jpg" style="width:60%; display: block; margin-left: auto; margin-right: auto; " ></img>
+  </div>
+  <div>
+    <img src="../static/images/gallery/r1_1_2.jpg" style="width:60%; display: block; margin-left: auto; margin-right: auto; " ></img>
+  </div>
+</section>
+{% elif context.date == '3' or context.date == 3 %}
+<section class="gallery-section">
+  <div class="clearfix auto-container" style="margin-left: auto; margin-right: auto; ">
+    <div class="form-group pull-left">
+      <a href="https://pea.webex.com/pea/j.php?MTID=m236fb86365cb898000a1c972656ca822"><button type="submit" class="theme-btn btn-style-two" style="margin: auto;  "><span class="txt">link Webex : ห้องนำเสนอบทความ ห้องที่ 2 วันที่ 30 พฤศจิกายน 2564</span></button></a>
+    </div>
+  </div>
+  <div class="auto-container">
+    <h4>บทความประเภท New Business and Marketing & Human Resource / Financial / Accounting / Strategy วันที่ 30 พฤศจิกายน 2564</h4>
+  </div>
+  <br>
+  <div>
+    <img src="../static/images/gallery/r2_30_1.jpg" style="width:60%; display: block; margin-left: auto; margin-right: auto; " ></img>
+  </div>
+  <br>
+  <div class="clearfix auto-container" style="margin-left: auto; margin-right: auto; ">
+    <div class="form-group pull-left">
+      <a href="https://pea.webex.com/pea/j.php?MTID=m236fb86365cb898000a1c972656ca822"><button type="submit" class="theme-btn btn-style-two" style="margin: auto;  "><span class="txt">link Webex : ห้องนำเสนอบทความ ห้องที่ 2 วันที่ 1 ธันวาคม 2564</span></button></a>
+    </div>
+  </div>
+  <br>
+  <div class="auto-container">
+    <h4>บทความประเภท Full Paper ด้าน Power and Energy วันที่ 1 ธันวาคม 2564</h4>
+  </div>
+  <br>
+  <div>
+    <img src="../static/images/gallery/r2_1_1.jpg" style="width:60%; display: block; margin-left: auto; margin-right: auto; " ></img>
+  </div>
+  <br>
+  <div class="auto-container">
+    <h4>บทความประเภท Full Paper ด้าน Human Resource / Financial / Accounting / Strategy วันที่ 1 ธันวาคม 2564</h4>
+  </div>
+  <br>
+  <div>
+    <img src="../static/images/gallery/r2_1_2.jpg" style="width:60%; display: block; margin-left: auto; margin-right: auto; " ></img>
+  </div>
+</section>
+{% elif context.date == '4' or context.date == 4 %}
+<section class="gallery-section">
+  <div class="clearfix auto-container" style="margin-left: auto; margin-right: auto; ">
+    <div class="form-group pull-left">
+      <a href="https://pea.webex.com/pea/j.php?MTID=mf3689c997596fc7bf6c0b321328b9315"><button type="submit" class="theme-btn btn-style-two" style="margin: auto;  "><span class="txt">link Webex : ห้องนำเสนอบทความ ห้องที่ 3 วันที่ 30 พฤศจิกายน 2564</span></button></a>
+    </div>
+  </div>
+  <div class="auto-container">
+    <h4>บทความประเภท Full Paper ด้าน Power and Energy  30 พฤศจิกายน 2564</h4>
+  </div>
+  <br>
+  <div>
+    <img src="../static/images/gallery/r3_30_1.jpg" style="width:60%; display: block; margin-left: auto; margin-right: auto; " ></img>
+  </div>
+  <br>
+  <div class="auto-container">
+    <h4>บทความประเภท Full Paper ด้าน Innovation and Technology  30 พฤศจิกายน 2564</h4>
+  </div>
+  <br>
+  <div>
+    <img src="../static/images/gallery/r3_30_2.jpg" style="width:60%; display: block; margin-left: auto; margin-right: auto; " ></img>
+  </div>
+  <br>
+  <div class="auto-container">
+    <h4></h4>
+  </div>
+  <br>
+  <div class="clearfix auto-container" style="margin-left: auto; margin-right: auto; ">
+    <div class="form-group pull-left">
+      <a href="https://pea.webex.com/pea/j.php?MTID=mf3689c997596fc7bf6c0b321328b9315"><button type="submit" class="theme-btn btn-style-two" style="margin: auto;  "><span class="txt">link Webex : ห้องนำเสนอบทความ ห้องที่ 3 วันที่ 1 ธันวาคม 2564</span></button></a>
+    </div>
+  </div>
+  <br>
+  <div class="auto-container">
+    <h4>บทความประเภท Full Paper ด้าน Innovation and Technology วันที่ 1 ธันวาคม 2564</h4>
+  </div>
+  <br>
+  <div>
+    <img src="../static/images/gallery/r3_1_1.jpg" style="width:60%; display: block; margin-left: auto; margin-right: auto; " ></img>
+  </div>
+  <div>
+    <img src="../static/images/gallery/r3_1_2.jpg" style="width:60%; display: block; margin-left: auto; margin-right: auto; " ></img>
+  </div>
+  <div>
+    <img src="../static/images/gallery/r3_1_3.jpg" style="width:60%; display: block; margin-left: auto; margin-right: auto; " ></img>
+  </div>
+</section>
+{% elif context.date == '5' or context.date == 5 %}
+<section class="gallery-section">
+  <div class="clearfix auto-container" style="margin-left: auto; margin-right: auto; ">
+    <div class="form-group pull-left">
+      <a href="https://pea.webex.com/pea/j.php?MTID=mb36ceb9a0649eb2909bf8dc7d5f58bbb"><button type="submit" class="theme-btn btn-style-two"><span class="txt">link Webex : ห้องนำเสนอบทความ ห้องที่ 4 วันที่ 30 พฤศจิกายน 2564</span></button></a>
+    </div>
+    <br>
+    <div class="form-group pull-left">
+      <a href="https://pea.webex.com/pea/j.php?MTID=mb36ceb9a0649eb2909bf8dc7d5f58bbb"><button type="submit" class="theme-btn btn-style-two"><span class="txt">link Webex : ห้องนำเสนอบทความ ห้องที่ 4 วันที่ 1 ธันวาคม 2564</span></button></a>
+    </div>
+</div>
+  <div>
+    <img src="../static/images/gallery/agenda.jpg" style="width:60%; display: block; margin-left: auto; margin-right: auto; " ></img>
+  </div>
+</section>
+{% endif %}
+<!-- End Page Title Section -->
+
+
+
+
+
+
+
+  <!-- <div class="container">
+    <h1>ลงทะเบียนเข้างาน</h1>
+    <di class="row">
+      <div class="col-6 text-center">
+        <a class="btn btn-primary btn-lg" href="{% url 'register' 1 %}">สำหรับบุคคลทั่วไป / นิสิต / นักศึกษา </a>
+      </div>
+      <div class="col-6 text-center">
+        <a class="btn btn-info btn-lg" href="{% url 'register' 2 %}">สำหรับ พนักงาน PEA  </a>
+      </div>
+    </div>
+  </div>
+  <br> -->
+
+  
+
+{% endblock %}

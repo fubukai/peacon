@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- Page Title Section -->
+<section class="page-title" style="background-image: url({% static 'images/background/pattern-16.png' %})">
+  <div class="pattern-layer-one" style="background-image: url({% static 'images/main-slider/pattern-1.png' %})"></div>
+  <div class="pattern-layer-two" style="background-image: url({% static 'images/background/pattern-17.png' %})"></div>
+  <div class="pattern-layer-three" style="background-image: url({% static 'images/background/pattern-18.png' %})"></div>
+  <div class="pattern-layer-four" style="background-image: url({% static 'images/icons/cross-icon.png' %})"></div>
+  <div class="auto-container">
+          <h2>LINK</h2>
+    <ul class="page-breadcrumb">
+      <li><a href="{% url 'index' %}">home</a></li>
+      <li>LINK</li>
+    </ul>
+  </div>
+</section>
+<!-- End Page Title Section -->
+
+<!-- Contact Info Section -->
+<section class="contact-info-section">
+  <!-- <div class="auto-container"> -->
+  <div class="auto-container">
+      <!-- Sec Title -->
+  <!-- <div class="sec-title centered"> -->
+  <div class="">
+    <!-- <div class="title">Follow Our Info</div> -->
+    <ul class="list-link">
+      <li><a href="https://peacon2021.pea.co.th/node/6">ดูบทความย้อนหลังปี 58-63</a></li>
+      <li><a href="https://www.webex.com/downloads.html">Download Webex</a></li>
+      <li><a href="{% static 'images/resource/manualWebEx.pdf' %}">คู่มือการใช้งาน Webex</a></li>
+      <!-- <li><a href="">National SEO</a></li>
+      <li><a href="">International SEO</a></li> -->
+    </ul>
+    <!-- <h2>สามารถดูบทความย้อนหลังปี 58-63 ได้ที่ <a href="https://peacon2021.pea.co.th">Here!</a></h2> -->
+    <!-- <div class="text">Give us a call or drop by anytime, we endeavour to answer all enquiries within 24 hours on business days. <br> We will be happy to answer your questions.</div> -->
+  </div>
+  
+  </div>
+</section>
+<!-- End Contact Info Section -->
+  
+  <!-- <div class="container">
+    <h1>ลงทะเบียนเข้างาน</h1>
+    <di class="row">
+      <div class="col-6 text-center">
+        <a class="btn btn-primary btn-lg" href="{% url 'register' 1 %}">สำหรับบุคคลทั่วไป / นิสิต / นักศึกษา </a>
+      </div>
+      <div class="col-6 text-center">
+        <a class="btn btn-info btn-lg" href="{% url 'register' 2 %}">สำหรับ พนักงาน PEA  </a>
+      </div>
+    </div>
+  </div>
+  <br> -->
+
+  
+
+{% endblock %}

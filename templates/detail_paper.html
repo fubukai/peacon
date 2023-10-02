@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- Page Title Section -->
+<section class="page-title" style="background-image: url({% static 'images/background/pattern-16.png' %})">
+    <div class="pattern-layer-one" style="background-image: url({% static 'images/main-slider/pattern-1.png' %})"></div>
+    <div class="pattern-layer-two" style="background-image: url({% static 'images/background/pattern-17.png' %})"></div>
+    <div class="pattern-layer-three" style="background-image: url({% static 'images/background/pattern-18.png' %})"></div>
+    <div class="pattern-layer-four" style="background-image: url({% static 'images/icons/cross-icon.png' %})"></div>
+    <div class="auto-container">
+            <h2>Paper Detail</h2>
+      <ul class="page-breadcrumb">
+        <li><a href="index.html">home</a></li>
+        <li>Paper Detail</li>
+      </ul>
+    </div>
+</section>
+  <!-- End Page Title Section -->
+
+<!-- Gallery Detail Section -->
+<section class="gallery-detail-section">
+    <div class="auto-container">
+        <div class="inner-container">
+            <!-- Info Section -->
+            <div class="upper-box">
+                <div class="row clearfix">
+                    
+                    <!-- Column -->
+                    <div class="column col-lg-3 col-md-6 col-sm-12">
+                        <ul class="list">
+                            <li><strong>CATEGORY</strong></li>
+                            <li>{{ get_paper.Paper_type }}</li>
+                        </ul>
+                    </div>
+                    <!-- Column -->
+                    <div class="column col-lg-3 col-md-6 col-sm-12">
+                        <ul class="list">
+                            <li><strong>รางวัล</strong></li>
+                            <li>Best Paper</li>
+                        </ul>
+                    </div>
+                    <div class="column col-lg-3 col-md-6 col-sm-12">
+                        <ul class="list">
+                            <li class="icon flaticon-like"><h3><strong></strong></h3></li>
+                            <li>{{ get_paper.Paper_like }}</li>
+                        </ul>
+                    </div>
+                    <!-- Column -->
+                   
+                    <div class="column col-lg-3 col-md-6 col-sm-12">
+                        <ul class="list">
+                            <li><strong>PUBLISHED</strong></li>
+                            <li>February 22, 2021</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="inner-box">
+                <div class="image titlt" data-tilt data-tilt-max="3">
+                    <img src="{% static 'images/resource/{{ get_paper.Paper_image }}' %}" alt="" />
+                </div>
+                <h3 class="text-center">{{ get_paper.Paper_name }}</h3>
+                <h6>{{ get_paper.Paper_owner }}</h6>
+                <br>
+                <h3>Abtract</h3>
+                <p>{{ get_paper.Paper_details }}</p>
+                <!-- <blockquote>
+                    “I cannot give you the formula for success, but I can give you the formula for failure. It is: Try to please everybody.”
+                    <span class="author-name"> -   HERBERT BAYARD SWOPE</span>
+                </blockquote> -->
+                
+                <h4><span>Download :</span> </h4><a href="" target="_blank" ><h5 class="icon flaticon-download" > Full Paper - {{ get_paper.Paper_name }}</h5></a>
+                <label>(จำนวนดาวโหลด {{ get_paper.Paper_like }} ครั้ง)</label>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Gallery Detail Section -->
+{% endblock %}

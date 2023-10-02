@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- Page Title Section -->
+<section class="page-title" style="background-image: url(../static/images/background/pattern-16.png)">
+  <div class="pattern-layer-one" style="background-image: url(../static/images/main-slider/pattern-1.png)"></div>
+  <div class="pattern-layer-two" style="background-image: url(../static/images/background/pattern-17.png)"></div>
+  <div class="pattern-layer-three" style="background-image: url(../static/images/background/pattern-18.png)"></div>
+  <div class="pattern-layer-four" style="background-image: url(../static/images/icons/cross-icon.png)"></div>
+  <div class="auto-container">
+          <h2>รายชื่อ</h2>
+    <ul class="page-breadcrumb">
+      <li><a href="{% url 'index' %}">home</a></li>
+      <li>รายชื่อ</li>
+    </ul>
+  </div>
+</section>
+<section class="gallery-section">
+	<div class="container">
+	<table class="table" id="example">
+		<thead class="thead-light">
+			<tr class="stylefont text-center clearfix">
+				<th class="align-middle text-center">ชื่อ</th>
+				<th class="align-middle text-center">นามสกุล</th>
+				<th class="align-middle text-center">หน่วยงาน</th>
+				<th class="align-middle text-center">line</th>
+				<th class="align-middle text-center">เบอร์โทรศัพท์มือถือ</th>
+				<th class="align-middle text-center">อีเมลล์</th>
+				<th class="align-middle text-center">ชื่อบทความ</th>
+				<th class="align-middle text-center">ประเภทบทความ</th>
+			</tr>
+		</thead>
+		<tbody >
+		{% for contexts in context %}
+		<tr class="stylefont text-center">
+			<td class="align-middle" style="color:white">{{ contexts.Speaker_name }}</td>
+			<td class="align-middle" style="color:white">{{ contexts.Speaker_lastname }}</td>
+			<td class="align-middle" style="color:white">{{ contexts.Speaker_type }}</td>
+			<td class="align-middle" style="color:white">{{ contexts.Speaker_line }}  </td>
+			<td class="align-middle" style="color:white">{{ contexts.Speaker_tel }}</td>
+			<td class="align-middle" style="color:white">{{ contexts.Speaker_email }}</td>
+			<td class="align-middle" style="color:white">{{ contexts.Speaker_position }}</td>
+			{% if contexts.Speaker_Status == '.development' %}
+				<td class="align-middle" style="color:white">Power and Energy</td>
+			{% elif contexts.Speaker_Status == '.marketing' %}
+				<td class="align-middle" style="color:white">Innovation and Technology</td>
+			{% elif contexts.Speaker_Status == '.media' %}
+				<td class="align-middle" style="color:white">New Business and Marketing</td>
+			{% elif contexts.Speaker_Status == '.optimization' %}
+				<td class="align-middle" style="color:white">HR / Financial / Accounting / Strategy</td>
+			{% elif contexts.Speaker_Status == '.share' %}\
+				<td class="align-middle" style="color:white">Share idea</td>
+			{% endif %}
+			</a>
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</div>
+</section>
+
+{% endblock %}

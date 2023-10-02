@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- Page Title Section -->
+<section class="page-title" style="background-image: url(../static/images/background/pattern-16.png)">
+  <div class="pattern-layer-one" style="background-image: url(../static/images/main-slider/pattern-1.png)"></div>
+  <div class="pattern-layer-two" style="background-image: url(../static/images/background/pattern-17.png)"></div>
+  <div class="pattern-layer-three" style="background-image: url(../static/images/background/pattern-18.png)"></div>
+  <div class="pattern-layer-four" style="background-image: url(../static/images/icons/cross-icon.png)"></div>
+  <div class="auto-container">
+          <h2>รายชื่อ</h2>
+    <ul class="page-breadcrumb">
+      <li><a href="{% url 'index' %}">home</a></li>
+      <li>รายชื่อ</li>
+    </ul>
+  </div>
+</section>
+<section class="gallery-section">
+	<div class="container">
+		<div class="auto-container">
+			<h2>รายชื่อผู้ใช้งาน</h2>
+		</div>
+	<table class="table" id="example">
+		<thead class="thead-light">
+			<tr class="stylefont text-center">
+				<th class="align-middle text-center">ชื่อ</th>
+				<th class="align-middle text-center">นามสกุล</th>
+				<th class="align-middle text-center">หน่วยงาน</th>
+				<th class="align-middle text-center">เบอร์โทรศัพท์มือถือ</th>
+				<th class="align-middle text-center">วันที่เข้าใช้งาน</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for contexts in context %}
+		<tr class="stylefont text-center">
+			<td class="align-middle">{{ contexts.user_name }}</td>
+			<td class="align-middle">{{ contexts.user_lastname }}</td>
+			{% if contexts.user_type == 1 or contexts.user_type == '1' %}
+				<td class="align-middle">หน่วยงานภายนอก</td>
+			{% elif contexts.user_type == 2 or contexts.user_type == '2' %}
+				<td class="align-middle">หน่วยงานภายใน</td>
+			{% endif %}
+			<td class="align-middle">{{ contexts.user_tel }}</td>
+			<td class="align-middle">{{ contexts.user_logindate }}</td>
+			</a>
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+
+	
+</div>
+</section>
+
+{% endblock %}

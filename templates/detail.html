@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- Page Title Section -->
+<section class="page-title" style="background-image: url(../static/images/background/pattern-16.png )">
+    <div class="pattern-layer-one" style="background-image: url(../static/images/main-slider/pattern-1.png )"></div>
+    <div class="pattern-layer-two" style="background-image: url(../static/images/background/pattern-17.png )"></div>
+    <div class="pattern-layer-three" style="background-image: url(../static/images/background/pattern-18.png )"></div>
+    <div class="pattern-layer-four" style="background-image: url(../static/images/icons/cross-icon.png )"></div>
+    <div class="auto-container">
+            <h2>Details</h2>
+    </div>
+  </section>
+  <!-- End Page Title Section -->
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+		<div class="pattern-layer auto-container" style="background-image: url(http://themerange.net/html/merix/merix-dark/images/resource/cta-bg.png)"></div>
+    	<div class="auto-container">
+			
+			<h2>{{ context.Papers_name }}</h2>
+			<br>
+			{% for owner in context.Owner %}
+				<h3> {{ owner.Creater_name }} {{ owner.Creater_lastname }} {{ owner.Creater_type }} </h3>
+			{% endfor %}
+			
+			<br>
+			<h3><div class="auto-container"> {{ context.Paper_details }} </div></h3>
+		<form method="POST" id="form_1" name="form_1">
+			{% csrf_token %}
+			<h2><a href="/static/pdf/{{ context.Paper_type }}/{{ context.Papers_PDF }}" download="proposed_file_name" >Download</a> (จำนวนครั้งที่ดาวน์โหลด : {{ context.Papers_num }} )</h2>
+		</form>
+		
+		</div>
+	</section>
+{% endblock %}
